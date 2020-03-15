@@ -1,0 +1,163 @@
+ 
+{% load static %}
+{% load ratings %}
+<!DOCTYPE html>
+<html>
+<title>awe_wards.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" class="w3-circle"
+    href="data:image/png;base64,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" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Raleway", sans-serif
+    }
+</style>
+
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:250px;" id="mySidebar"><br>
+        <div class="w3-container">
+            <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey"
+                title="close menu">
+                <i class="fa fa-remove"></i>
+            </a>
+            <h4 class="w3-center"><b><svg width="141" height="22.3" viewBox="0 0 280 44.3">
+                        <path class="logo-fill" id="logo-a1"
+                            d="M1.2,20.8c1-5.1,5.5-8.7,11.9-8.7c7.4,0,13.1,3.1,13.1,13.1v18.6h-6.3l-0.8-4c-2.2,2.7-5.1,4.5-9.6,4.5 C4.2,44.3,0,41,0,34.8s5.5-10.2,13.3-10.2h5.2v-1.4c0-3.5-2.6-4.6-5.5-4.6c-2.2,0-4.4,0.7-5.4,3.6L1.2,20.8z M11.3,37.8 c3.5,0,7.2-2.4,7.2-6.4v-0.6h-5.1c-3.3-0.1-5.3,1.2-5.3,3.9C8.1,36.2,9.2,37.8,11.3,37.8z">
+                        </path>
+                        <path class="logo-fill" id="logo-a2"
+                            d="M151,20.8c1-5.1,5.5-8.7,11.9-8.7c7.4,0,13.1,3.1,13.1,13.1v18.6h-6.3l-0.8-4c-2.2,2.7-5.1,4.5-9.6,4.5 c-5.3,0-9.5-3.3-9.5-9.5s5.5-10.2,13.3-10.2h5.2v-1.4c0-3.5-2.6-4.6-5.5-4.6c-2.2,0-4.4,0.7-5.4,3.6L151,20.8z M161.1,37.8 c3.5,0,7.2-2.4,7.2-6.4v-0.6h-5.1c-3.3,0-5.3,1.2-5.3,4C157.9,36.2,159,37.8,161.1,37.8z">
+                        </path>
+                        <path class="logo-fill" id="logo-r"
+                            d="M183,43.9V12.6h7.7v5.1c2.2-3.7,5.7-5.6,9.2-5.6c1.4,0,2.5,0.2,3.8,0.6l-1.4,7.1c-0.9-0.6-1.9-0.9-3.2-0.9 c-4.5,0-8.4,3.7-8.4,13.8v11.1L183,43.9L183,43.9z">
+                        </path>
+                        <path class="logo-fill" id="logo-d"
+                            d="M220.1,12.1c3.2,0,6.2,1.6,7.6,3.3V0h7.7v43.9h-7.7v-3.2c-0.9,1.6-3.7,3.7-7.6,3.7c-9.4,0-14.2-6.5-14.2-16.1 S210.7,12.1,220.1,12.1z M221.2,37.8c4,0,7.2-3.3,7.2-9.5s-3.2-9.5-7.2-9.5s-7.2,3.3-7.2,9.5S217.2,37.8,221.2,37.8z">
+                        </path>
+                        <path class="logo-fill" id="logo-s"
+                            d="M263.2,17.1l-4.6,4.2c-1.4-1.9-3.5-2.7-5.2-2.7c-1.5,0-2.9,0.9-2.9,2.6c0,1.4,1.1,2.4,3,3 c4.3,1.6,11.3,2.9,11.3,9.6c0,5.7-4.3,10.4-11.1,10.4c-6.5,0-10.9-4.6-12.4-8.4l6.1-3.3c1.1,3,3.2,5.2,6.3,5.2 c2.4,0,3.9-1.1,3.9-3.4c0-2.6-4-3.2-7.8-4.8c-3.4-1.4-6.3-3.6-6.3-8.4s3.9-9.1,10-9.1C257.6,12,261.3,14.1,263.2,17.1z">
+                        </path>
+                        <polygon class="logo-fill" id="logo-w2"
+                            points="103,12.6 97.5,34.1 92.2,12.6 85,12.6 79.8,34.1 75.4,21.6 74.9,23.1 72.4,31.1 76.4,43.9 83.2,43.9  88.6,23.7 94,43.9 100.8,43.9 110.8,12.6">
+                        </polygon>
+                        <polygon class="logo-fill" id="logo-w3"
+                            points="140.2,12.6 134.6,34.1 129.3,12.6 122.1,12.6 116.9,34.1 112.5,21.6 112,23.1 109.5,31.1 113.5,43.9  120.3,43.9 125.7,23.7 131.1,43.9 137.9,43.9 147.9,12.6">
+                        </polygon>
+                        <path class="logo-fill" id="logo-w1"
+                            d="M73.7,12.6l-10,31.2h-6.8l-5.4-20.2l-5.4,20.3h-6.8l-10-31.2h7.8l5.6,21.4L48,12.7h7.1l5.3,21.4L66,12.7 L73.7,12.6L73.7,12.6z">
+                        </path>
+                        <path class="logo-fill" id="logo-p"
+                            d="M274.8,33.8c3,0,5.2,2.2,5.2,5.2s-2.2,5.2-5.2,5.2s-5.2-2.2-5.2-5.2S271.9,33.8,274.8,33.8z">
+                        </path>
+                    </svg></b></h4>
+
+            <p class="w3-text-grey w3-center"> Logged in as <a id='zae' style='font-size: 18px;'
+                    href="{%url 'profile'%}"><span id='spaner'>{{user.username}}</span></a></p>
+        </div>
+        <div class="w3-bar-block">
+            <div class="w3-bar-block">
+                <a href="{%url 'home'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-green"><i
+                        class="fa fa-home fa-fw w3-margin-right"></i>Home</a>
+                <a href="{%url 'profile'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
+                        class="fa fa-user fa-fw w3-margin-right"></i>Profile</a>
+                <a href="/logout" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
+                        class="fa fa-sign-out fa-fw w3-margin-right"></i>Logout</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+        title="close side menu" id="myOverlay"></div>
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:250px;">
+        <!-- Header -->
+        <header id="portfolio">
+            <a href="#"><img
+                    src="data:image/png;base64,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"
+                    style="width:65px;height:65px;"
+                    class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+            <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i
+                    class="fa fa-bars"></i></span>
+        </header>
+        <!-- First Photo Grid-->
+
+        <div class="w3-row-padding">
+            <h4>{{project.project_name}}</h4>
+
+            <div class="w3-container w3-col l6 w3-margin-bottom ">
+                <img src="{{project.project_photo.url}}" alt="project_photo" style="width:100%" class="w3-card-4">
+            </div>
+            <div class="w3-container w3-col l6 w3-padding w3-margin-bottom">
+                <h5 class="w3-center">Project Details</h5>
+                <p>Name: {{project.project_name}}</p>
+                <p>Description: {{project.description}}</p>
+                <br>
+                <a href="{{project.url}}"><i class="fa fa-lg w3-text-green fa-globe"> visit</i></a>
+
+            </div>
+            <div class="w3-row-padding ">
+                <div class="">
+                    <h5 class="w3-center w3-padding">How does {{project.project_name}} rate?</h5>
+                    <div class="w3-col w3-center l4 w3-padding ">
+                        <p><em>Design</em></p>
+                        <span>{% ratings project icon_height=20 icon_width=20%}</span>
+                    </div>
+                    <div class="w3-col w3-center l4 w3-padding">
+                        <p><em>Usability</em></p>
+                        <span>{% ratings project icon_height=20 icon_width=20%}</span>
+                    </div>
+                    <div class="w3-col w3-center w3-padding l4 ">
+                        <p><em>Content</em></p>
+                        <span>{% ratings project icon_height=20 icon_width=20%}</span>
+                    </div>
+                    <br> <br> <br>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+
+        <!-- End page content -->
+
+
+        <script>
+            // Script to open and close sidebar
+            function w3_open() {
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("myOverlay").style.display = "block";
+            }
+
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+                document.getElementById("myOverlay").style.display = "none";
+            }
+
+        </script>
+
+        <style>
+            #zae {
+                text-decoration: none !important;
+                color: #4CAF50 !important;
+            }
+        </style>
+
+</body>
+
+</html>
