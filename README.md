@@ -24,7 +24,7 @@ Awward is a website that allows people to present their websites to be critiqued
 
 ### Clone the Repo and rename it to suit your needs.
 ```bash
-git clone 
+git clone https://github.com/antomuli/Awwards.git
 ```
 ### Initialize git and add the remote repository
 ```bash
