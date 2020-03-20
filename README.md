@@ -96,4 +96,4 @@ Contact [Anthony Muli](mulianthony561@gmail.com) for further help/support
 
 [MIT](/License)
 
-Copyright (c)2019 **Anthony Muli**
+Copyright (c)2020 **Anthony Muli**
