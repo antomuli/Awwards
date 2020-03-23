@@ -1,0 +1,35 @@
+{%extends "registration/base.html"%}
+{% load bootstrap3 %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div id='zote' class="w3-container-fluid w3-theme-l5">
+    <div class="w3-row">
+        <div class="col-md-5">
+            <img src="https://images.pexels.com/photos/2040276/pexels-photo-2040276.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                style="width:auto; height:640px; padding-left: 0%;" alt="">
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="col-md-7" style="padding-left: 14%">
+            <div class="panel panel-default w3-card">
+                <div class="panel-heading w3-theme-d4">
+                    <h3 class="text-center">Sign Out</h3>
+                </div>
+                <div class="panel-body ">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form|crispy}}
+                        <div class="form-group">
+                            <input type="submit" class="w3-button w3-theme-d4" value="Login">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

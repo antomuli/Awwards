@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.views import logout
+from django.contrib.auth.forms import UserCreationForm 
+# from django.contrib.auth.views import logout     # This logout is imported from somewhere else. You can figure out where if you wanna use it.
 from django.contrib.auth.decorators import login_required
 from .forms import *
 from django.http import Http404
+from django.contrib.auth.views import LogoutView
 
 # Create your views here.
 
@@ -45,7 +46,7 @@ def profile(request):
             return redirect('profile')
     else:
         form = UploadForm()
-        my_projects = Projects.objects.filter(owner=current_user)
+        my_projects = Projects.objects.filter(uploader=current_user)
         my_profile = Profile.objects.get(user_id=current_user)
     return render(request, 'profile.html', locals())
 
@@ -88,6 +89,6 @@ def search(request):
     return render(request, 'search.html', locals())
 
 
-@login_required(login_url='/accounts/login')
-def logout_view(request):
-    logout(request)
+# @login_required(login_url='/accounts/login')
+# def logout(request):
+#     logout(request)

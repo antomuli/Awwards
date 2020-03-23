@@ -71,7 +71,7 @@
                         class="fa fa-home fa-fw w3-margin-right"></i>Home</a>
                 <a href="{%url 'profile'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
                         class="fa fa-user fa-fw w3-margin-right"></i>Profile</a>
-                <a href="/logout" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
+                <a href="/accounts/logout" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
                         class="fa fa-sign-out fa-fw w3-margin-right"></i>Logout</a>
                 <form role="search" class="w3-hide-small" action="{%url 'search'%}">
                     <input type="text" name="project"
@@ -105,48 +105,48 @@
 
         <div class="w3-row-padding">
             <h4 class="w3-center">All Projects</h4>
-            <div class="w3-center"><a class="w3-button w3-round w3-green" href="{%url 'post'%}"><b>+ </b>Add a Project</a>
-            <h5 class="w3-center"><em>How do they rate?</em></h5>
-            {%for project in all_projects%}
-            <div class="w3-third w3-container w3-margin-bottom ">
-                <div class="row">
-                    <a href="{%url 'project' project_id=project.id%}"><img src="{{project.project_photo.url}}"
-                            alt="project_photo" style="width:100%" class="w3-hover-opacity"
-                            title="Click to view more details"></a>
-                    <div class="w3-container w3-white w3-card">
-                        <p><b>{{project.project_name}}</b></p>
-                        <p>{{project.description}}</p>
-                        <div class="w3-center "></div>
+            <div class="w3-center"><a class="w3-button w3-round w3-blue" href="{%url 'post'%}"><b>+ </b>Add your
+                    Project to be rated</a>
+                <h5 class="w3-center"><em>How do they rate?</em></h5>
+                {%for project in all_projects%}
+                <div class="w3-third w3-container w3-margin-bottom ">
+                    <div class="row">
+                        <a href="{%url 'project' project_id=project.id%}"><img src="{{project.project_photo.url}}"
+                                alt="project_photo" style="width:100%" class="w3-hover-opacity"
+                                title="Click to view more details"></a>
+                        <div class="w3-container w3-white w3-card">
+                            <p><b>{{project.project_name}}</b></p>
+                            <p>{{project.description}}</p>
+                            <div class="w3-center "></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            {%endfor%}
+                {%endfor%}
 
-            <!-- End page content -->
-        
+                <!-- End page content -->
 
 
-        <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
-        <script>
-            // Script to open and close sidebar
-            function w3_open() {
-                document.getElementById("mySidebar").style.display = "block";
-                document.getElementById("myOverlay").style.display = "block";
-            }
 
-            function w3_close() {
-                document.getElementById("mySidebar").style.display = "none";
-                document.getElementById("myOverlay").style.display = "none";
-            }
+                <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+                <script>
+                    // Script to open and close sidebar
+                    function w3_open() {
+                        document.getElementById("mySidebar").style.display = "block";
+                        document.getElementById("myOverlay").style.display = "block";
+                    }
 
-        </script>
+                    function w3_close() {
+                        document.getElementById("mySidebar").style.display = "none";
+                        document.getElementById("myOverlay").style.display = "none";
+                    }
+                </script>
 
-        <style>
-            #muli {
-                text-decoration: none !important;
-                color: rgb(76, 175, 170) !important;
-            }
-        </style>
+                <style>
+                    #muli {
+                        text-decoration: none !important;
+                        color: rgb(76, 175, 170) !important;
+                    }
+                </style>
 
 </body>
 

@@ -17,10 +17,10 @@ class ProjectsTestCase(TestCase):
             projects = Project.objects.all()
             self.assertTrue(len(projects) > 0)
 
-    # def setUp(self,project_name='Chi_Gallery',project_photo='tree.png',description='some description',github_repo='git repo',url='tree.com',uploader='chinchillah'):
-    #     return Projects.objects.create(project_name=project_name, project_photo=project_photo, description=description, github_repo=github_repo, url=url, uploader=uploader)
+    def setUp(self,project_name='Chi_Gallery',project_photo='tree.png',description='some description',github_repo='git repo',url='tree.com',uploader='chinchillah'):
+        return Projects.objects.create(project_name=project_name, project_photo=project_photo, description=description, github_repo=github_repo, url=url, uploader=uploader)
 
-    # def projectSave(self):
-    #     initialization = self.setUp()
-    #     self.assertTrue(save > 0)
+    def projectSave(self):
+        initialization = self.setUp()
+        self.assertTrue(save > 0)
 
