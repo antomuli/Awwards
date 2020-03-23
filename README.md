@@ -4,7 +4,7 @@
 
 
 ## Description
-Awward is a website that allows people to present their websites to be critiqued by other developers and users.
+Awward is a website that allows people to present their websites to be critiqued by other developers and users.Here is the live link: https://safe-castle-67944.herokuapp.com/
 
 
 ## Technologies used
