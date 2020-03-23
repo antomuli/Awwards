@@ -12,7 +12,7 @@ urlpatterns=[
     url(r'^project/(?P<project_id>[0-9])$',views.project,name ='project'),
     url(r'profile/',views.profile, name='profile'),
     url(r'^post/', views.upload_form, name='post'),
-    url(r'^edit/', views.edit_prof, name='edit'),
+    # url(r'^edit/', views.edit_prof, name='edit'),
 
 ]
 
