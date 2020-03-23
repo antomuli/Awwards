@@ -4,10 +4,11 @@
 
 
 ## Description
+
 Awward is a website that allows people to present their websites to be critiqued by other developers and users.Here is the live link: https://safe-castle-67944.herokuapp.com/
 
-
 ## Technologies used
+
     - Python 3.6
     - HTML
     - Bootstrap 4
@@ -54,6 +55,9 @@ ALLOWED_HOSTS='.localhost', '.herokuapp.com', '.127.0.0.1'
 DISABLE_COLLECTSTATIC=1
 ```
 
+## CODEBEAT
+
+[![codebeat badge](https://codebeat.co/badges/b491b9bf-d4fb-42dc-a3d8-81db3d1f3acb)](https://codebeat.co/projects/github-com-antomuli-awwards-master)
 
 ### Database Design
 
