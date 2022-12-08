@@ -1,6 +1,6 @@
 asgiref==3.2.5
 autopep8==1.5
-certifi==2019.11.28
+certifi==2022.12.7
 chardet==3.0.4
 cloudinary==1.20.0
 config==0.4.2
